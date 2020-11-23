@@ -23,6 +23,18 @@ builds:
     goarch:
       - amd64
     binary: tdexd-darwin
+  - id: "tdexd-arm"
+    main: ./cmd/tdexd
+    ldflags:
+      - -s -w
+    env:
+      - CGO_ENABLED=1
+      - CC=arm-linux-gnueabi-gcc
+    goos:
+      - linux
+    goarch:
+      - arm
+    binary: tdexd-arm
   - id: "tdex"
     main: ./cmd/tdex
     env:
@@ -61,6 +73,7 @@ archives:
     builds:
       - tdexd-linux
       - tdexd-darwin
+      - tdexd-arm
     name_template: "tdexd-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
   - id: tdex
     format: binary

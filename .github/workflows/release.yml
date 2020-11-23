@@ -2,6 +2,7 @@ name: goreleaser
 
 on:
   push:
+    branches: [arm_build_goreleaser]
     tags:
       - "*"
 jobs:
