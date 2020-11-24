@@ -18,7 +18,7 @@ jobs:
         with:
           go-version: 1.15.2
       - name: Install ARM build dependencies
-        run: apt-get install gcc-arm-linux-gnueabi
+        run: sudo apt-get install gcc-arm-linux-gnueabi
       - name: OSXCross for CGO Support
         run: |
           mkdir ../../osxcross
